@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head><title>AI GIF Generator</title></head>
+<body>
+    <h2>AI-Powered GIF Generator</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <label>Prompt:</label><br>
+        <input type="text" name="prompt" required><br><br>
+
+        <label>YouTube URL:</label><br>
+        <input type="text" name="youtube_url"><br><br>
+
+        <label>OR Upload Video:</label><br>
+        <input type="file" name="video_file"><br><br>
+
+        <input type="submit" value="Generate GIFs">
+    </form>
+
+    {% if gifs %}
+        <h3>Generated GIFs:</h3>
+        {% for gif in gifs %}
+            <img src="{{ gif }}" width="300"><br>
+            <a href="{{ gif }}" download>Download GIF</a><br><br>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>

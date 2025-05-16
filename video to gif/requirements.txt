@@ -1,0 +1,6 @@
+Flask
+pytube
+moviepy
+openai-whisper
+torch
+sentence-transformers
